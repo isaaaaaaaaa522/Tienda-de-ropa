@@ -29,7 +29,7 @@ header {
   display: flex;
   position: fixed;
   width: 100%;
-  background-color: var(--bg-section);
+  background-color: purple;
   padding: 22px 18px;
   top: 0;
   left: 0;
