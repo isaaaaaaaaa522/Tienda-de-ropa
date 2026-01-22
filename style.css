@@ -29,7 +29,7 @@ header {
   display: flex;
   position: fixed;
   width: 100%;
-  background-color: purple;
+  background-color: rgb(99, 11, 99);
   padding: 22px 18px;
   top: 0;
   left: 0;
@@ -40,16 +40,14 @@ header {
 }
 
 
-header div {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-}
 
 nav ul {
   display: flex;
   list-style: none;
+  position: relative;
 }
+
+
 
 li {
   margin: 0 20px;
@@ -137,4 +135,110 @@ li a.active::after {
   .navs-links.active {
     max-height: 300px;
   }
+}
+
+.hero{
+  width: 100vw;
+  position: relative;
+  background: url('img/tienda.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;      
+}
+
+.black{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-main);
+  font-size: 48px;
+  text-align: center;
+}
+
+.logo{
+ 
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0 ;
+
+  
+  
+  
+}
+
+.logo h1{
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 30px;
+}
+
+.iconos {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  padding: 10px 30px;
+}
+.iconos button a{
+  color: var(--text-main);
+  font-size: 20px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.iconos button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.search-overlay {
+  height: 20vh;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 9999;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+.search-overlay input {
+  width: 50%;
+  max-width: 600px;
+  padding: 14px 18px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.search-overlay button {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.navbar.hidden {
+  display: none;
 }
