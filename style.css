@@ -1,0 +1,140 @@
+html {
+  scroll-behavior: smooth;
+}
+/*Gooblas CSS*/ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif,Arial;
+}
+
+:root {
+  --bg-main: #0B1220;
+  --bg-section: #0F172A;
+  --bg-card: #1C2333;
+
+ 
+
+  --accent: #F97316;       /* Naranja técnico */
+
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+
+  --border: #334155;
+}
+
+
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-section);
+  padding: 22px 18px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+header div {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 0 20px;
+}
+
+li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  padding-bottom: 6px;
+  position: relative;
+  transition: transform 0.3s ease, color 0.5s ease;
+}
+li a:hover,
+li a.active {
+  color: var(--accent);
+  font-size: 16.5px;
+}
+li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+li a:hover::after,
+li a.active::after {
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+}
+.menu-toggle { 
+  display: none; 
+  font-size: 30px; 
+  cursor: pointer; 
+  color: var(--text-main); 
+  transition: 
+    transform 0.35s ease,
+    opacity 0.25s ease;
+}
+.menu-toggle.open {
+  transform: rotate(90deg) scale(0.9);
+}
+@media (max-width: 768px) {
+  header{
+    justify-content: end;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .navs-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-main);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .navs-links li {
+    margin: 15px 0;
+    overflow: hidden;
+  }
+
+  .navs-links.active {
+    max-height: 300px;
+  }
+}
