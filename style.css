@@ -35,7 +35,7 @@ header {
   left: 0;
   z-index: 1000;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -138,7 +138,7 @@ li a.active::after {
 }
 
 .hero{
-  width: 100vw;
+  width: 100%;
   position: relative;
   background: url('img/tienda.jpg');
   background-size: cover;
@@ -167,31 +167,18 @@ li a.active::after {
 }
 
 .logo{
- 
   color: var(--text-main);
   font-size: 1rem;
   font-weight: bold;
-  position: absolute;
-  left: 0 ;
-
-  
-  
-  
 }
 
 .logo h1{
-
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px 30px;
 }
 
-.iconos {
-  position: absolute;
-  right: 0;
-  top: 15px;
-  padding: 10px 30px;
+.iconos { 
+  display: flex;
+  margin-right: 20px;
 }
 .iconos button a{
   color: var(--text-main);
@@ -241,4 +228,28 @@ li a.active::after {
 
 .navbar.hidden {
   display: none;
+}
+
+.carrusel{
+  display: flex;
+  height: auto;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 15px;
+}
+.card{
+  flex: 0 0 20rem;
+  height: auto;
+  padding: 10px;
+  margin:5px;
+  background-color: red;
+}
+.imagenes{
+  display: flex;
+  height: 298px;
+  width: 298px;
+  overflow-x: auto;
+}
+.imagenes img {
+  flex:0 0 19em;
 }

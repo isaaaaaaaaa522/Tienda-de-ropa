@@ -83,12 +83,48 @@ closeSearch.addEventListener("click", () => {
 
 
 
+const contenedor = document.getElementById("carrusel");
 
+function renderizarProductos(productos) {
+  contenedor.innerHTML = "";
 
+  productos.forEach(p => {
+
+    const imagenesHTML = p.imagenes
+      .map(img => `<img src="../img/${img}.jpeg" alt="${p.nombre}">`)
+      .join("");
+
+    const coloresHTML = p.colores
+      .map(color => `<span class="color" style="background:${color}"></span>`)
+      .join("");
+
+    const tallasHTML = p.tallas
+      .map(talla => `<button>${talla}</button>`)
+      .join("");
+
+    contenedor.innerHTML += `
+      <article class="card">
+        <div class="imagenes">${imagenesHTML}</div>
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion}</p>
+        <strong>S/ ${p.precio}</strong>
+        <div class="colores">${coloresHTML}</div>
+        <div class="tallas">${tallasHTML}</div>
+      </article>
+    `;
+  });
+}
 
   /* ==========================
      INICIALIZACIÓN
   ========================== */
-  initNavLinks();
+initNavLinks();
 initMenuMovil();
 initSearchOverlay();
+fetch("./datos.json")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Productos cargados:", data.productos);
+    renderizarProductos(data.productos);
+  })
+  .catch(err => console.error("Error cargando JSON:", err));

@@ -1,0 +1,83 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin",
+      "correo": "admin@admin.pe",
+      "carrito": []
+    }
+  ],
+
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 2,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 3,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 4,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 5,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 6,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    },
+    {
+      "id": 7,
+      "nombre": "Pantalón",
+      "descripcion": "Pantalón holgado hecho a base de algodón",
+      "precio": 15.5,
+      "categoria": "Hombre",
+      "imagenes": ["jp1", "jp2", "jp3"],
+      "colores": ["red", "blue", "green"],
+      "tallas": ["S", "M", "L"]
+    }
+  ]
+}
