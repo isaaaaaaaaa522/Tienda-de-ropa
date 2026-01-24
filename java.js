@@ -89,6 +89,6 @@ closeSearch.addEventListener("click", () => {
   /* ==========================
      INICIALIZACIÓN
   ========================== */
-  initNavLinks();
+initNavLinks();
 initMenuMovil();
 initSearchOverlay();

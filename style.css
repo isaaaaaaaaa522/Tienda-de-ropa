@@ -35,7 +35,7 @@ header {
   left: 0;
   z-index: 1000;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -44,7 +44,6 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  position: relative;
 }
 
 
@@ -144,7 +143,7 @@ li a.active::after {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;      
+  height: 97vh;      
 }
 
 .black{
@@ -171,12 +170,7 @@ li a.active::after {
   color: var(--text-main);
   font-size: 1rem;
   font-weight: bold;
-  position: absolute;
-  left: 0 ;
-
-  
-  
-  
+ 
 }
 
 .logo h1{
@@ -188,7 +182,6 @@ li a.active::after {
 }
 
 .iconos {
-  position: absolute;
   right: 0;
   top: 15px;
   padding: 10px 30px;
