@@ -10,7 +10,7 @@ html {
 }
 
 :root {
-  --bg-main: #0B1220;
+  --bg-principal: #7c3aed;
   --bg-section: #0F172A;
   --bg-card: #1C2333;
 
@@ -18,10 +18,7 @@ html {
 
   --accent: #F97316;       /* Naranja técnico */
 
-  --text-main: #FFFFFF;
-  --text-muted: #94A3B8;
 
-  --border: #334155;
 }
 
 
@@ -29,7 +26,7 @@ header {
   display: flex;
   position: fixed;
   width: 100%;
-  background-color: rgb(99, 11, 99);
+  background-color: var(--bg-principal);
   padding: 22px 18px;
   top: 0;
   left: 0;
@@ -55,7 +52,7 @@ li {
 li a {
   font-size: 18px;
   text-decoration: none;
-  color: var(--text-main);
+  color: white;
   font-weight: 500;
   padding-bottom: 6px;
   position: relative;
@@ -94,7 +91,7 @@ li a.active::after {
   display: none; 
   font-size: 30px; 
   cursor: pointer; 
-  color: var(--text-main); 
+  color: white; 
   transition: 
     transform 0.35s ease,
     opacity 0.25s ease;
@@ -160,13 +157,13 @@ li a.active::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--text-main);
+  color: white;
   font-size: 48px;
   text-align: center;
 }
 
 .logo{
-  color: var(--text-main);
+  color: white;
   font-size: 1rem;
   font-weight: bold;
 
@@ -184,10 +181,10 @@ li a.active::after {
 
 }
 .iconos button a{
-  color: var(--text-main);
-  font-size: 20px;
+  font-size: 22px;
   margin-left: 20px;
   text-decoration: none;
+  color: white;
 }
 
 .iconos button {

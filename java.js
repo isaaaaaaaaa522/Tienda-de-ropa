@@ -1,5 +1,21 @@
- 
- 
+function scrollNavbar() {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      navbar.style.top = `-${navbar.offsetHeight}px`;
+    } else {
+      navbar.style.top = '0';
+    }
+
+    lastScrollTop = scrollTop;
+  });
+}
+
+
  function initNavLinks() {
     const navLinks = document.querySelectorAll(".navbar a");
     const activeLink = localStorage.getItem("activeNav");
@@ -82,7 +98,7 @@ closeSearch.addEventListener("click", () => {
 }
 
 
-
+/* CARRUSEL DE LOS PRODUCTOS DE KEVIN */
 const contenedor = document.getElementById("carrusel");
 
 function renderizarProductos(productos) {
@@ -91,7 +107,7 @@ function renderizarProductos(productos) {
   productos.forEach(p => {
 
     const imagenesHTML = p.imagenes
-      .map(img => `<img src="../img/${img}.jpeg" alt="${p.nombre}">`)
+      .map(img => `<img src="../img/${img}" alt="${p.nombre}">`)
       .join("");
 
     const coloresHTML = p.colores
@@ -115,12 +131,19 @@ function renderizarProductos(productos) {
   });
 }
 
+
+
+
+  
+
+
   /* ==========================
-     INICIALIZACIÓN
+     INICIALIZACIÓN 
   ========================== */
 initNavLinks();
 initMenuMovil();
 initSearchOverlay();
+scrollNavbar();
 fetch("./datos.json")
   .then(res => res.json())
   .then(data => {
@@ -128,3 +151,5 @@ fetch("./datos.json")
     renderizarProductos(data.productos);
   })
   .catch(err => console.error("Error cargando JSON:", err));
+
+
