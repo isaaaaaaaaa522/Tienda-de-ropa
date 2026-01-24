@@ -169,26 +169,19 @@ li a.active::after {
   color: var(--text-main);
   font-size: 1rem;
   font-weight: bold;
-<<<<<<< HEAD
- 
-=======
->>>>>>> 6122d5231e357cba4b1cb91209db08ebfe3b0c1a
+
+
 }
 
 .logo h1{
   display: flex;
 }
 
-<<<<<<< HEAD
-.iconos {
-  right: 0;
-  top: 15px;
-  padding: 10px 30px;
-=======
+
 .iconos { 
   display: flex;
   margin-right: 20px;
->>>>>>> 6122d5231e357cba4b1cb91209db08ebfe3b0c1a
+
 }
 .iconos button a{
   color: var(--text-main);
