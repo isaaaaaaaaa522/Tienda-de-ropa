@@ -58,24 +58,7 @@ function scrollNavbar() {
     });
   }
 
-
-  const openSearch = document.getElementById("openSearch");
-const closeSearch = document.getElementById("closeSearch");
-const searchOverlay = document.getElementById("searchOverlay");
-const navbar = document.querySelector(".navbar");
-
-openSearch.addEventListener("click", (e) => {
-  e.preventDefault();
-  navbar.classList.add("hidden");
-  searchOverlay.classList.add("active");
-});
-
-closeSearch.addEventListener("click", () => {
-  searchOverlay.classList.remove("active");
-  navbar.classList.remove("hidden");
-});
-
-
+/* buscador */
 
 
 function initSearchOverlay() {
