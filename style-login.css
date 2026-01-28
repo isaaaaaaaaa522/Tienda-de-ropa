@@ -216,3 +216,11 @@ button:hover {
 .toggle-password:hover {
   color: var(--bg-principal);
 }
+
+.error {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-block: 15px;
+  display: none; /* oculto por defecto */
+  align-items: center;
+}

@@ -29,11 +29,11 @@
       <h1> Cuenta</h1>
       <p class="subtitle">Regístrate para una experiencia de compra personalizada.</p>
 
-      <form>
+      <form class="formulario">
        
 
        <div class="input-group">
-             <input type="email" placeholder="">
+             <input type="email" placeholder="" required >
           <label>Correo Electrónico</label>
          
         </div>
@@ -47,10 +47,14 @@
         <!--   <small>Deben tener al menos 8 caracteres.</small> -->
         
 
-        <label class="checkbox">
-          <input type="checkbox">
-          Acepto los terminos y la<a href="#">Política de Privacidad</a>.
-        </label>
+      <label class="checkbox" >
+        <input type="checkbox" class="check-date" id="politica">
+        He leído y acepto la <a href="" target="_blank">política de privacidad</a>.
+      </label>
+
+       <p id="error-politica" class="error">
+        <span><i class="fa-solid fa-exclamation"></i></span> Este campo es obligatorio
+      </p>
 
         <button type="button" id="goRegister">Crear Cuenta</button>
         <button type="button" id="goGoogle">Google</button>
@@ -63,5 +67,6 @@
 
   </main>
 <script src="login.js" defer></script>
+
 </body>
 </html>
