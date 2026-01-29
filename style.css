@@ -229,7 +229,7 @@ li a.active::after {
 .navbar.hidden {
   display: none;
 }
-
+/* Estilos para el carrusel de tarjetas */
 .carrusel{
   display: flex;
   height: auto;
@@ -242,14 +242,45 @@ li a.active::after {
   height: auto;
   padding: 10px;
   margin:5px;
-  background-color: red;
+  background-color: rgb(55, 84, 179);
 }
 .imagenes{
+  position: relative;
   display: flex;
-  height: 298px;
-  width: 298px;
-  overflow-x: auto;
+  flex-direction: column;
+  overflow: hidden;
+  margin: -10px -10px 0px -10px;
+}
+.prev{
+  text-align: center;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 8px;
+}
+.next{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px;
+}
+.prev, .next{
+  background-color: rgba(223, 216, 216, 0.89);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
 }
 .imagenes img {
-  flex:0 0 19em;
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  object-position: top;
 }
+
+.imagenes img.activa {
+  display: block;
+}
+
