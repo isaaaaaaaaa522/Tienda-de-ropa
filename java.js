@@ -90,12 +90,26 @@ function renderizarProductos(productos) {
   productos.forEach(p => {
 
     const imagenesHTML = p.imagenes
-      .map(img => `<img src="../img/${img}" alt="${p.nombre}">`)
+      .map((img, index) => `
+        <img 
+          src="../img/${img.src}"
+          data-color="${img.color}"
+          class="${index === 0 ? "activa" : ""}"
+        >
+      `)
       .join("");
 
-    const coloresHTML = p.colores
-      .map(color => `<span class="color" style="background:${color}"></span>`)
-      .join("");
+
+    const coloresHTML = p.imagenes
+    .map(img => `
+      <span 
+        class="color" 
+        data-color="${img.color}"
+        style="background:${img.color}">
+      </span>
+    `)
+    .join("");
+
 
     const tallasHTML = p.tallas
       .map(talla => `<button>${talla}</button>`)
@@ -103,7 +117,11 @@ function renderizarProductos(productos) {
 
     contenedor.innerHTML += `
       <article class="card">
-        <div class="imagenes">${imagenesHTML}</div>
+        <div class="imagenes" data-index="0">
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+          ${imagenesHTML}
+        </div>
         <h3>${p.nombre}</h3>
         <p>${p.descripcion}</p>
         <strong>S/ ${p.precio}</strong>
@@ -113,8 +131,50 @@ function renderizarProductos(productos) {
     `;
   });
 }
+/*Movimiento del Carrusel*/
+contenedor.addEventListener("click", e => {
+  if (!e.target.classList.contains("prev") && 
+      !e.target.classList.contains("next")) return;
 
+  const imagenesCont = e.target.closest(".imagenes");
+  const imagenes = imagenesCont.querySelectorAll("img");
+  let index = Number(imagenesCont.dataset.index);
 
+  if (e.target.classList.contains("next")) {
+    index = (index + 1) % imagenes.length;
+  }
+
+  if (e.target.classList.contains("prev")) {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+  }
+
+  imagenes.forEach(img => img.classList.remove("activa"));
+  imagenes[index].classList.add("activa");
+  imagenesCont.dataset.index = index;
+});
+
+contenedor.addEventListener("mouseenter", e => {
+  if (!e.target.matches(".imagenes img")) return;
+
+  const imagenesCont = e.target.closest(".imagenes");
+  const imagenes = imagenesCont.querySelectorAll("img");
+  const indexActual = Number(imagenesCont.dataset.index);
+  const indexHover = (indexActual - 1 + imagenes.length) % imagenes.length;
+
+  imagenes[indexActual].classList.remove("activa");
+  imagenes[indexHover].classList.add("activa");
+}, true);
+
+contenedor.addEventListener("mouseleave", e => {
+  if (!e.target.matches(".imagenes")) return;
+
+  const imagenesCont = e.target.closest(".imagenes");
+  const imagenes = imagenesCont.querySelectorAll("img");
+  const indexActual = Number(imagenesCont.dataset.index);
+
+  imagenes.forEach(img => img.classList.remove("activa"));
+  imagenes[indexActual].classList.add("activa");
+}, true);
 
 
   
