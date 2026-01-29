@@ -90,16 +90,6 @@
       { "src": "jp-verde.jpeg", "color": "green" }
       ],
       "tallas": ["S", "M", "L"]
-    },
-      {
-      "id": 8,
-      "nombre": "Pantalón",
-      "descripcion": "Pantalón holgado hecho a base de algodón",
-      "precio": 15.5,
-      "categoria": "Mujer",
-      "imagenes": ["jp1", "jp2", "jp3"],
-      "colores": ["red", "blue", "green"],
-      "tallas": ["S", "M", "L"]
     }
   ]
 }

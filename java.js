@@ -179,66 +179,6 @@ contenedor.addEventListener("mouseleave", e => {
   imagenes[indexActual].classList.add("activa");
 }, true);
 
-/* filter-header */
-  
-function filterHeader() {
-
-const filters = document.querySelectorAll(".filter");
-
-filters.forEach(filter => {
-  filter.addEventListener("toggle", () => {
-    if (filter.open) {
-      filters.forEach(other => {
-        if (other !== filter) other.removeAttribute("open");
-      });
-    }
-  });
-});
-
-  }
-
-  const products = document.getElementById("products");
-
-function renderizarProducts(productos) {
-  products.innerHTML = "";
-
-  productos.forEach(p => {
-
-    const imagenPrincipal = p.imagenes[0]; // 👈 CORRECTO
-
-    const coloresHTML = p.imagenes
-      .map(img => `
-        <span 
-          class="color" 
-          style="background:${img.color}" 
-          data-color="${img.color}">
-        </span>
-      `)
-      .join("");
-
-    const tallasHTML = p.tallas
-      .map(talla => `<button>${talla}</button>`)
-      .join("");
-
-    products.innerHTML += `
-      <article class="product-card">
-        <div class="product-img">
-          <img src="../img/${imagenPrincipal.src}" alt="${p.nombre}">
-        </div>
-
-        <h3>${p.nombre}</h3>
-        <p>${p.descripcion}</p>
-        <strong>S/ ${p.precio}</strong>
-
-        <div class="colores">${coloresHTML}</div>
-        <div class="tallas">${tallasHTML}</div>
-      </article>
-    `;
-  });
-}
-
-
-
 
 
 
@@ -249,14 +189,12 @@ function renderizarProducts(productos) {
 initNavLinks();
 initMenuMovil();
 initSearchOverlay();
-filterHeader();
 scrollNavbar();
 fetch("./datos.json")
   .then(res => res.json())
   .then(data => {
     console.log("Productos cargados:", data.productos);
     renderizarProductos(data.productos);
-    renderizarProducts(data.productos);
     
   })
   .catch(err => console.error("Error cargando JSON:", err));
