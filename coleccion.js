@@ -137,8 +137,7 @@ function renderizarProducts(productos) {
         <h3>${p.nombre}</h3>
         <p>${p.descripcion}</p>
         <strong>S/ ${p.precio}</strong>
-        <div class="colores">${coloresHTML}</div>
-        <div class="tallas">${tallasHTML}</div>
+      
       </article>
     `;
   });

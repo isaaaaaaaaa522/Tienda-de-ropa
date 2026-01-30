@@ -11,14 +11,6 @@ html {
 
 :root {
   --bg-principal: #7c3aed;
-  --bg-section: #0F172A;
-  --bg-card: #1C2333;
-
- 
-
-  --accent: #F97316;       /* Naranja técnico */
-
-
 }
 
 
@@ -296,12 +288,14 @@ li a.active::after {
   font-family: system-ui, -apple-system, sans-serif;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.05);
   margin-top: 80px;
+    scrollbar-width: thin;              /* Firefox */
+  scrollbar-color: #bbb transparent;
 }
 
-/* cada bloque */
-.filter {
-  padding: 0.75rem 0;
-}
+
+
+
+
 
 /* summary */
 .filter summary {
