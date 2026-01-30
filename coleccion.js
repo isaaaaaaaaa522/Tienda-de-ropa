@@ -144,10 +144,14 @@ function renderizarProducts(productos) {
     `;
   });
 }
+
+
+
+
 initNavLinks();
 initMenuMovil();
 initSearchOverlay();
-filterHeader();
+
 scrollNavbar();
 fetch("./datos.json")
   .then(res => res.json())

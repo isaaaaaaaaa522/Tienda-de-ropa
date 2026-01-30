@@ -288,7 +288,7 @@ li a.active::after {
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 24px;
   width: calc(100% - 300px); /* 100% menos 300px */
-  margin-left: 300px;
+  margin-left: 100px;
   padding: 24px;
   box-sizing: border-box;
 }
@@ -394,4 +394,59 @@ li a.active::after {
 .products-grid{
     margin-top: 80px;
     background-color: rebeccapurple;
+}
+
+.carrusel{
+  display: flex;
+  height: auto;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 15px;
+}
+.card{
+  flex: 0 0 20rem;
+  height: auto;
+  padding: 10px;
+  margin:5px;
+  background-color: rgb(55, 84, 179);
+}
+.imagenes{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: -10px -10px 0px -10px;
+}
+.prev{
+  text-align: center;
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 8px;
+}
+.next{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 6px;
+}
+.prev, .next{
+  background-color: rgba(223, 216, 216, 0.89);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.imagenes img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  object-position: top;
+}
+
+
+.imagenes img.activa {
+  display: block;
 }
