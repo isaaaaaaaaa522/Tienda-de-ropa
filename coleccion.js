@@ -66,7 +66,6 @@ function initSearchOverlay() {
 const closeSearch = document.getElementById("closeSearch");
 const searchOverlay = document.getElementById("searchOverlay");
 const navbar = document.querySelector(".navbar");
- if (!openSearch || !closeSearch || !searchOverlay) return;
 openSearch.addEventListener("click", (e) => {
   e.preventDefault();
   navbar.classList.add("hidden");
