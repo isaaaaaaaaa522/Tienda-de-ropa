@@ -93,6 +93,8 @@ filters.forEach(filter => {
 });
 
   }
+
+  
   
 const contenedor = document.getElementById("products");
 
@@ -176,6 +178,41 @@ function renderizarCategorias(productos) {
     `;
   });
 }
+function initPrecioRange() {
+  const rangeMin = document.getElementById("rangeMin");
+  const rangeMax = document.getElementById("rangeMax");
+  const minPrice = document.getElementById("minPrice");
+  const maxPrice = document.getElementById("maxPrice");
+
+  rangeMin.addEventListener("input", () => {
+    if (+rangeMin.value >= +rangeMax.value) {
+      rangeMin.value = rangeMax.value - 1;
+    }
+    minPrice.value = rangeMin.value;
+  });
+
+  rangeMax.addEventListener("input", () => {
+    if (+rangeMax.value <= +rangeMin.value) {
+      rangeMax.value = +rangeMin.value + 1;
+    }
+    maxPrice.value = rangeMax.value;
+  });
+
+  minPrice.addEventListener("input", () => {
+    if (+minPrice.value < +rangeMax.value) {
+      rangeMin.value = minPrice.value;
+    }
+  });
+
+  maxPrice.addEventListener("input", () => {
+    if (+maxPrice.value > +rangeMin.value) {
+      rangeMax.value = maxPrice.value;
+    }
+  });
+}
+
+initPrecioRange();
+
 
 
 

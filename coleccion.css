@@ -164,6 +164,7 @@ li a.active::after {
   justify-content: center;
   gap: 20px;
   z-index: 9999;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .search-overlay.active {
@@ -414,3 +415,102 @@ li a.active::after {
 .imagenes img.activa {
   display: block;
 }
+
+
+.coleccion-container{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.img-coleccion{
+  width: 155px;
+  height: 155px;
+  overflow: hidden;
+ 
+  
+}
+.img-coleccion .coleccion-headerrr{
+  display: flex;
+
+  
+  
+}
+.img-coleccion img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.content-precio {
+  width: 200px;
+}
+
+/* contenedor del range */
+.range-precio {
+  position: relative;
+  height: 32px;
+  margin-top: 10px;
+}
+
+/* ambos range superpuestos */
+.range-precio input[type="range"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  pointer-events: none;
+  appearance: none;
+}
+
+/* pista */
+.range-precio input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--bg-principal);
+  border-radius: 4px;
+}
+
+/* bolitas */
+.range-precio input[type="range"]::-webkit-slider-thumb {
+  bottom: 8px;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--bg-principal);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* bolita izquierda por encima si chocan */
+#rangeMin::-webkit-slider-thumb {
+  z-index: 4;
+}
+
+/* inputs numéricos */
+.inputs-precio {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  
+}
+
+.inputs-precio input {
+
+  width: 90px;
+  padding: 6px;
+  border: 1px solid var(--bg-principal);
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+}
+

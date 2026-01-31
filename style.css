@@ -196,6 +196,8 @@ li a.active::after {
   justify-content: center;
   gap: 20px;
   z-index: 9999;
+ box-shadow: 0 30px 20px rgba(0, 0, 0, 0.4);
+
 }
 
 .search-overlay.active {

@@ -110,10 +110,22 @@
       Precio
       <i class="fa-solid fa-chevron-down"></i>
     </summary>
-    <div class="content">
-      <label><input type="checkbox"> S/ 0 - 100</label>
-      <label><input type="checkbox"> S/ 100 - 200</label>
-    </div>
+<div class="content-precio">
+  
+   <div class="inputs-precio">
+    <input type="number" id="minPrice" value="0">
+    <input type="number" id="maxPrice" value="200">
+  </div>
+
+  <div class="range-precio">
+    <input type="range" id="rangeMin" min="0" max="200" value="0">
+    <input type="range" id="rangeMax" min="0" max="200" value="200">
+  </div>
+
+ 
+</div>
+
+
   </details>
 
    <details class="filter">
