@@ -59,7 +59,7 @@
       "precio": 15.5,
       "categoria": "Hombre",
       "imagenes": [
-      { "src": "jp-rojo.jpeg", "color": "red" },
+      { "src": "asco.avif", "color": "red" },
       { "src": "jp-azul.jpeg", "color": "blue" },
       { "src": "jp-verde.jpeg", "color": "green" }
       ],
