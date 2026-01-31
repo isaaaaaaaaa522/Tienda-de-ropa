@@ -365,8 +365,6 @@ li a.active::after {
 
 .card{
   flex: 0 0 10rem;
-
-  height: auto;
   width: 250px;
   padding: 10px;
   margin:5px;
@@ -397,7 +395,7 @@ li a.active::after {
   padding: 6px;
 }
 .prev, .next{
-  background-color: rgba(223, 216, 216, 0.89);
+  background-color: rgba(223, 216, 216, 0.734);
   border: none;
   cursor: pointer;
   font-size: 18px;

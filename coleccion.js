@@ -143,6 +143,39 @@ function renderizarProducts(productos) {
   });
 }
 
+const coleccionContainer = document.getElementById("coleccion-header");
+
+function renderizarCategorias(productos) {
+ coleccionContainer.innerHTML = "";
+
+  productos.forEach(p => {
+
+    const imagenesHTML = p.imagenes
+      .map((img, index) => `
+        <img 
+          src="../img/${img.src}"
+          data-color="${img.color}"
+          class="${index === 0 ? "activa" : ""}"
+        >
+      `)
+      .join("");
+
+   
+    coleccionContainer.innerHTML += `
+      
+        <div class="img-coleccion" data-index="0">
+        <div class="coleccion-headerrr">
+         ${imagenesHTML}
+         </div>
+        </div>
+         
+          
+        </div>
+   
+      
+    `;
+  });
+}
 
 
 
@@ -156,6 +189,7 @@ fetch("./datos.json")
   .then(data => {
     console.log("Productos cargados:", data.productos);
     renderizarProducts(data.productos);
+    renderizarCategorias(data.productos);
     
   })
   .catch(err => console.error("Error cargando JSON:", err));
