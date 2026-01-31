@@ -417,6 +417,7 @@ li a.active::after {
 }
 
 
+
 .coleccion-container{
   display: flex;
   justify-content: center;
@@ -426,10 +427,13 @@ li a.active::after {
   padding: 20px;
 }
 
+
+
 .img-coleccion{
   width: 155px;
   height: 155px;
   overflow: hidden;
+
  
   
 }
@@ -437,12 +441,18 @@ li a.active::after {
   display: flex;
 
   
+
+}
+.img-coleccion .coleccion-headerrr{
+  display: flex;
+
   
 }
 .img-coleccion img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 
 }
 
@@ -513,4 +523,6 @@ li a.active::after {
   font-size: 15px;
   font-weight: 400;
 }
+
+
 
