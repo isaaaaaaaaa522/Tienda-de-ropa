@@ -414,3 +414,18 @@ li a.active::after {
 .imagenes img.activa {
   display: block;
 }
+
+.img-coleccion{
+  width: 155px;
+  height: 155px;
+  overflow: hidden;
+}
+.img-coleccion .coleccion-headerrr{
+  display: flex;
+  
+}
+.img-coleccion img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
