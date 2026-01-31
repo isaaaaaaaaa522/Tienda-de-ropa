@@ -439,15 +439,8 @@ li a.active::after {
 }
 .img-coleccion .coleccion-headerrr{
   display: flex;
-
-  
-
 }
-.img-coleccion .coleccion-headerrr{
-  display: flex;
 
-  
-}
 .img-coleccion img{
   width: 100%;
   height: 100%;
