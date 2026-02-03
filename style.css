@@ -227,24 +227,61 @@ li a.active::after {
 .carrusel{
   display: flex;
   height: auto;
-  width: 100%;
   overflow-x: scroll;
-  gap: 15px;
 }
 .card{
   flex: 0 0 20rem;
   height: auto;
-  padding: 10px;
-  margin:5px;
-  background-color: rgb(55, 84, 179);
+  margin:20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+.card h3{
+  margin-block: 8px;
+  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+.descripcion{
+  margin: 8px;
+  height: auto;
+}
+.card p{
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #555;
+  margin-block: 5px;
 }
 .imagenes{
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: -10px -10px 0px -10px;
 }
+.vista{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  left: 30px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 14px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  visibility: hidden;
+}
+.card:hover .vista {
+  visibility: visible;
+}
+.vista:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
 .prev{
   text-align: center;
   position: absolute;
@@ -269,9 +306,10 @@ li a.active::after {
 .imagenes img {
   display: none;
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit:cover;
   object-position: top;
+  border-radius: 12px 12px 0 0;
 }
 
 
@@ -282,6 +320,7 @@ li a.active::after {
 .colores {
   display: flex;
   gap: 8px;
+  margin-top: 5px;
 }
 
 .color {
@@ -289,5 +328,7 @@ li a.active::after {
   height: 18px;
   border-radius: 50%;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
 }
+
+/*Estilo de descripcion producto*/
