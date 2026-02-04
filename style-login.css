@@ -178,6 +178,14 @@ button:hover {
   background: #6d28d9;
 }
 
+button a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+
+}
+
 .login-link {
   font-size: 13px;
   text-align: center;
