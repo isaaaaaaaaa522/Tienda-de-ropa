@@ -115,11 +115,11 @@ function renderizarProductos(productos) {
 
     contenedor.innerHTML += `
       <article class="card">
-        <div class="imagenes" data-index="0">
+        <div class="imagenes">
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
           ${imagenesHTML}
-          <button class="vista" data-id="${index}">Vista Rapida</button>
+          <button class="vista" data-id="${index}">Vista Rápida</button>
         </div>
 
         <div class="descripcion">
@@ -164,7 +164,7 @@ function renderVistaRapida(producto) {
 }
 
 /* ==========================
-   EVENTOS CARRUSEL + VISTA
+   EVENTOS CARRUSEL (INFINITO REAL)
 ========================== */
 contenedor.addEventListener("click", e => {
 
@@ -178,31 +178,54 @@ contenedor.addEventListener("click", e => {
       !e.target.classList.contains("next")) return;
 
   const imagenesCont = e.target.closest(".imagenes");
-  const imagenes = imagenesCont.querySelectorAll("img");
-  let index = Number(imagenesCont.dataset.index);
+  const imagenes = [...imagenesCont.querySelectorAll("img")];
+
+  let indexActual = imagenes.findIndex(img =>
+    img.classList.contains("activa")
+  );
+
+  if (indexActual === -1) indexActual = 0;
+
+  let nuevoIndex;
 
   if (e.target.classList.contains("next")) {
-    index = (index + 1) % imagenes.length;
+    nuevoIndex = (indexActual + 1) % imagenes.length;
   }
 
   if (e.target.classList.contains("prev")) {
-    index = (index - 1 + imagenes.length) % imagenes.length;
+    nuevoIndex = (indexActual - 1 + imagenes.length) % imagenes.length;
   }
 
   imagenes.forEach(img => img.classList.remove("activa"));
-  imagenes[index].classList.add("activa");
-  imagenesCont.dataset.index = index;
+  imagenes[nuevoIndex].classList.add("activa");
 });
 
 /* ==========================
-   CERRAR VISTA RÁPIDA
+   HOVER → AVANZA / RETROCEDE
 ========================== */
-contenedorVista.addEventListener("click", e => {
-  if (e.target.classList.contains("cerrar")) {
-    contenedorVista.classList.remove("active");
-    contenedorVista.innerHTML = "";
-  }
-});
+function initHoverCard() {
+  document.querySelectorAll(".card").forEach(card => {
+    const cont = card.querySelector(".imagenes");
+
+    card.addEventListener("mouseenter", () => {
+      const imgs = [...cont.querySelectorAll("img")];
+      let index = imgs.findIndex(i => i.classList.contains("activa"));
+      index = (index + 1) % imgs.length;
+
+      imgs.forEach(i => i.classList.remove("activa"));
+      imgs[index].classList.add("activa");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      const imgs = [...cont.querySelectorAll("img")];
+      let index = imgs.findIndex(i => i.classList.contains("activa"));
+      index = (index - 1 + imgs.length) % imgs.length;
+
+      imgs.forEach(i => i.classList.remove("activa"));
+      imgs[index].classList.add("activa");
+    });
+  });
+}
 
 /* ==========================
    CAMBIO DE IMAGEN POR COLOR
@@ -222,6 +245,16 @@ function cambiarImagenPorColor() {
 }
 
 /* ==========================
+   CERRAR VISTA RÁPIDA
+========================== */
+contenedorVista.addEventListener("click", e => {
+  if (e.target.classList.contains("cerrar")) {
+    contenedorVista.classList.remove("active");
+    contenedorVista.innerHTML = "";
+  }
+});
+
+/* ==========================
    INICIALIZACIÓN
 ========================== */
 cambiarImagenPorColor();
@@ -235,5 +268,6 @@ fetch("./datos.json")
   .then(data => {
     productosGlobal = data.productos;
     renderizarProductos(productosGlobal);
+    initHoverCard();
   })
   .catch(err => console.error("Error cargando JSON:", err));
