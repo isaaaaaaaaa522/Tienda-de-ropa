@@ -143,8 +143,23 @@ function renderVistaRapida(producto) {
 
       <div class="vista-imagenes">
         ${producto.imagenes
-          .map(img => `<img src="../img/${img.src}">`)
+          .map(
+            (img, index) =>
+              `<img 
+                src="../img/${img.src}" 
+                data-index="${index}" 
+                class="thumb"
+              >`
+          )
           .join("")}
+      </div>
+
+      <div class="producto-img">
+        <img 
+          id="imagenGrande" 
+          src="../img/${producto.imagenes[0].src}" 
+          alt="${producto.nombre}"
+        >
       </div>
 
       <div class="vista-info">
@@ -157,11 +172,45 @@ function renderVistaRapida(producto) {
             .map(img => `<span style="background:${img.color}"></span>`)
             .join("")}
         </div>
+
+        <div class="cantidad">
+          <span>Cantidad:</span>
+          <button>-</button>
+          <input type="number" value="1" min="1" />
+          <button>+</button>
+        </div>
+
+        <span>Talla:</span>
+        <div class="tallas">
+          ${producto.tallas.map(t => `<button>${t}</button>`).join("")}
+        </div>
+
+        <button class="agregar-carrito">Agregar al Carrito</button>
       </div>
     </div>
   `;
+
   contenedorVista.classList.add("active");
+
+  activarCambioImagen();
 }
+/* ==========================
+   HOVER → AVANZA / RETROCEDE
+========================== */
+function activarCambioImagen() {
+  const imagenGrande = document.getElementById("imagenGrande");
+  const miniaturas = document.querySelectorAll(".thumb");
+
+  miniaturas.forEach(img => {
+    img.addEventListener("click", () => {
+      imagenGrande.src = img.src;
+
+      miniaturas.forEach(i => i.classList.remove("active"));
+      img.classList.add("active");
+    });
+  });
+}
+
 
 /* ==========================
    EVENTOS CARRUSEL (INFINITO REAL)
@@ -262,6 +311,7 @@ initNavLinks();
 initMenuMovil();
 initSearchOverlay();
 scrollNavbar();
+activarCambioImagen();
 
 fetch("./datos.json")
   .then(res => res.json())
