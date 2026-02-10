@@ -132,8 +132,11 @@ function renderizarProducts(productos) {
     contenedor.innerHTML += `
       <article class="card">
         <div class="imagenes" data-index="0">
+         <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+         
           <button class="prev">&#10094;</button>
           <button class="next">&#10095;</button>
+            <button class="vista" ">Vista Rápida</button>
           ${imagenesHTML}
         </div>
         <h3>${p.nombre}</h3>
@@ -177,11 +180,13 @@ function renderizarCategorias(productos) {
     coleccionContainer.innerHTML += `
       <div class="img-coleccion" data-index="0">
         <div class="coleccion-headerrr">
+    
          
         <div class="imagenes-coleccion-black"></div>
+        <h3 class="name">Holaaaa</h3>
          ${imagenesHTML}
        
-         <h3>xs</h3>
+         
         
          </div>
         

@@ -3,22 +3,27 @@
     {
       "id": 1,
       "nombre": "Pantalón",
+      "favorito": false,
       "descripcion": "Pantalón holgado  de algodón",
       "precio": 15.5,
       "categoria": "Hombre",
+       "descuentos": [30, 50, 60, 70],
       "imagenes": [
       { "src": "jp1.jpeg", "color": "#7c3aed" },
       { "src": "tienda.jpg", "color": "blue" },
       { "src": "logo.jpg", "color": "green" }
       ],
       "tallas": ["S", "M", "L"]
+      
     },
     {
       "id": 2,
       "nombre": "Pantalón",
+      "favorito": false,
       "descripcion": "Pantalón holgado hecho a base de algodón",
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
    { "src": "jp1.jpeg", "color": "#7c3aed" },
       { "src": "jp-azul.jpeg", "color": "blue" },
@@ -29,9 +34,11 @@
     {
       "id": 3,
       "nombre": "Pantalón",
+       "favorito": false,
       "descripcion": "Pantalón holgado hecho a base de algodón",
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
      { "src": "jp1.jpeg", "color": "#7c3aed" },
       { "src": "tienda.jpg", "color": "blue" },
@@ -42,9 +49,11 @@
     {
       "id": 4,
       "nombre": "Pantalón",
+       "favorito": false,
       "descripcion": "Pantalón holgado hecho a base de algodón",
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
      { "src": "jp1.jpeg", "color": "#7c3aed" },
       { "src": "jp-azul.jpeg", "color": "blue" },
@@ -56,8 +65,10 @@
       "id": 5,
       "nombre": "Pantalón",
       "descripcion": "Pantalón holgado hecho a base de algodón",
+       "favorito": false,
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
       { "src": "asco.avif", "color": "red" },
       { "src": "modelo.avif", "color": "blue" },
@@ -69,8 +80,10 @@
       "id": 6,
       "nombre": "Pantalón",
       "descripcion": "Pantalón holgado hecho a base de algodón",
+       "favorito": false,
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
       { "src": "asco.avif", "color": "red" },
       { "src": "jp-azul.jpeg", "color": "blue" },
@@ -82,8 +95,10 @@
       "id": 7,
       "nombre": "Pantalón",
       "descripcion": "Pantalón holgado hecho a base de algodón",
+       "favorito": false,
       "precio": 15.5,
       "categoria": "Hombre",
+          "descuentos": [30, 50, 60, 70],
       "imagenes": [
      { "src": "asco.avif", "color": "red" },
       { "src": "jp-azul.jpeg", "color": "blue" },
