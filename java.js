@@ -139,7 +139,7 @@ function renderizarProductos(productos) {
 function renderVistaRapida(producto) {
   contenedorVista.innerHTML = `
     <div class="vista-container">
-      <button class="cerrar">✖</button>
+      
 
       <div class="vista-imagenes">
         ${producto.imagenes
@@ -163,6 +163,9 @@ function renderVistaRapida(producto) {
       </div>
 
       <div class="vista-info">
+        <div class="close">
+          <button class="cerrar">✖</button>
+        </div>
         <h2>${producto.nombre}</h2>
         <p>${producto.descripcion}</p>
         <strong>S/ ${producto.precio}</strong>
@@ -186,7 +189,9 @@ function renderVistaRapida(producto) {
         </div>
 
         <button class="agregar-carrito">Agregar al Carrito</button>
+        
       </div>
+      
     </div>
   `;
 
