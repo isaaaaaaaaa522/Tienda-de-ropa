@@ -197,10 +197,10 @@ li a.active::after {
   width: 280px;
   max-height: 100vh;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 5px 16px;
   font-family: system-ui, -apple-system, sans-serif;
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.05);
-  margin-top: 80px;
+  box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.05);
+  
 }
 
 /* cada bloque */
@@ -271,7 +271,35 @@ li a.active::after {
 
 .divisor-header{
   display: flex;
+  
 }
+
+.divisor-filters{
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 80px;
+}
+
+
+.button-filters{
+  display: flex;
+  border: none;
+  background: none;
+  margin-left: 10px;
+
+}
+
+.oculto{
+  display: none;
+}
+
+.button-filters{
+  display: flex;
+  gap: 5px;
+
+}
+
 
 /* CONTENEDOR GENERAL */
 .products-grid {

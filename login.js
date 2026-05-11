@@ -1,6 +1,6 @@
 
 /* Ojo de contraseña */
-/* function AbrirCerrar() {
+ function AbrirCerrar() {
     const passwordInput = document.getElementById("password");
 const togglePassword = document.getElementById("togglePassword");
 
@@ -13,7 +13,7 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("fa-eye-slash", isPassword);
 });
 }
- */
+
 
 
 

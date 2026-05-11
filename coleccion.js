@@ -194,6 +194,8 @@ function renderizarCategorias(productos) {
     `;
   });
 
+
+
   // Inicializar carrusel después de renderizar
   initCarousel();
 }
@@ -326,6 +328,36 @@ function initPrecioRange() {
     }
   });
 }
+
+const button = document.querySelector(".button-filters");
+const filters = document.querySelector(".filters");
+const arrow = document.querySelector(".arrow");
+
+function ocultarFiltros() {
+  filters.classList.add("oculto");
+
+  arrow.classList.remove("fa-chevron-left");
+  arrow.classList.add("fa-chevron-right");
+}
+
+function mostrarFiltros() {
+  filters.classList.remove("oculto");
+
+  arrow.classList.remove("fa-chevron-right");
+  arrow.classList.add("fa-chevron-left");
+}
+
+function toggleFiltros() {
+
+  if (filters.classList.contains("oculto")) {
+    mostrarFiltros();
+  } else {
+    ocultarFiltros();
+  }
+
+}
+
+button.addEventListener("click", toggleFiltros);
 
 initPrecioRange();
 initNavLinks();
