@@ -341,15 +341,20 @@ li a.active::after {
   gap: 40px;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 .cerrar{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
+  height: 25px;
+  width: 25px;
+  font-size: 15px;
   font-weight: bold;
   color: #333;
   cursor: pointer;
+}
+.close{
+  width: 100%;
+  display: flex;
+  justify-content: right;
 }
 .vista-imagenes{
   display: flex;
@@ -365,12 +370,29 @@ li a.active::after {
   margin: 0;
 }
 
-.name{
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  color: white;
-  font-size: 24px;
-  z-index: -100000000000000000;
+#imagenGrande{
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+.vista-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vista-info h2{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+.vista-info p{
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #555;
+}
+.vista-info .precio{
+  font-size: 120px;
+  font-weight: bold;
+  color: #e60000;
+}
