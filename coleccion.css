@@ -200,6 +200,7 @@ li a.active::after {
   padding: 5px 16px;
   font-family: system-ui, -apple-system, sans-serif;
   box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
   
 }
 
@@ -274,12 +275,6 @@ li a.active::after {
   
 }
 
-.divisor-filters{
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin-top: 80px;
-}
 
 
 .button-filters{
@@ -299,7 +294,6 @@ li a.active::after {
   gap: 5px;
 
 }
-
 
 /* CONTENEDOR GENERAL */
 .products-grid {
@@ -388,9 +382,9 @@ li a.active::after {
 }
 
 /* Productos CSS */
-.products-grid{
+/* .products-grid{
     margin-top: 80px;
-}
+} */
 
 .card{
   flex: 0 0 10rem;
